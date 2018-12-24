@@ -27,10 +27,9 @@
   }
 
   .route-content{
-    background: gray;
-    margin-top: 70px;
+    margin-top: 75px;
     padding: 10px;
-    height: 150vh;
     overflow: auto;
+    height: 90vh;
   }
 </style>

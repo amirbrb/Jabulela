@@ -1,7 +1,7 @@
 <template>
   <div class="navigation-bar">
     <div class="header">
-      <font-awesome-icon icon="bars" class="button-small left" @click="toggleMenu"/>
+      <font-awesome-icon icon="bars" class="button-small left settings-menu" @click="toggleMenu"/>
       <div class="logo left">
         evento
       </div>
@@ -46,17 +46,25 @@
   .navigation-bar{
     font-size: 24px;
     padding: 10px;
-    height: 25px;
+    height: 45px;
     position: fixed;
     top: 0px;
     left: 0;
     width: 100%;
     z-index: 2;
-    background: red;
+    background: white;
+    border-bottom: 2px solid gray;
+  }
+
+  .header{
+    margin-left: 15px;
+  }
+
+  .settings-menu{
   }
 
   .logo{
-    margin-left: 40px;
+    margin-left: 30px;
     width: 150px;
     line-height: 38px;
   }
