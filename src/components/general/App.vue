@@ -1,8 +1,16 @@
 <template>
-  <div class="app">
-    <HeaderNavigation></HeaderNavigation>
-    <div class="route-content">
-      asaaaa
+  <div class="wrapper">
+    <div class="header">
+      <div class="inner">
+        <HeaderNavigation></HeaderNavigation>
+      </div>
+    </div>
+    <div class="content">
+      <div class="inner">
+        <div class="scrollable">
+          <div style="height: 1000px;">router content</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,14 +30,30 @@
 
 <style>
   @import '../../../static/css/site.css';
-
-  .app{
+  
+  html, body {
+    height: 100%;
+    margin: 0;  
   }
-
-  .route-content{
-    margin-top: 75px;
-    padding: 10px;
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  .header, .content, .footer {
+    display: table-row;
+  }
+  .inner {
+    display: table-cell;
+  }
+  .content .inner {
+    height: 100%;
+    position: relative;
+  }
+  .scrollable {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
     overflow: auto;
-    height: 90vh;
   }
 </style>

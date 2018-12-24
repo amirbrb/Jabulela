@@ -6,7 +6,7 @@
         evento
       </div>
       <div class="user-settings right" @click="toggleUserMenu">
-        <img class="user-profile button-small" :src="getImage(this.$store.state.userData.profileImage)"/>
+        <img class="user-profile button-small right" :src="getImage(this.$store.state.userData.profileImage)"/>
       </div>
     </div>
     <SettingsMenu ref="settings" style="display:none"/>
@@ -45,19 +45,14 @@
 <style scoped>
   .navigation-bar{
     font-size: 24px;
-    padding: 10px;
     height: 45px;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
     z-index: 2;
-    background: white;
+    padding: 15px;
     border-bottom: 2px solid gray;
   }
 
   .header{
-    margin-left: 15px;
+
   }
 
   .settings-menu{
@@ -65,14 +60,14 @@
 
   .logo{
     margin-left: 30px;
-    width: 150px;
     line-height: 38px;
   }
 
   .user-profile {
     border-radius: 50px;
     border: 2px solid gray;
-    margin-right: 20px;
+    position: absolute;
+    right: 10px;
   }
 
 </style>
