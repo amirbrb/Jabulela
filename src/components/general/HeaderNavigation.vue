@@ -45,7 +45,7 @@
 <style scoped>
   .navigation-bar{
     font-size: 24px;
-    height: 45px;
+    height: 35px;
     z-index: 2;
     padding: 15px;
     border-bottom: 2px solid gray;

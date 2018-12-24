@@ -8,7 +8,10 @@
     <div class="content">
       <div class="inner">
         <div class="scrollable">
-          <div style="height: 1000px;">router content</div>
+          <div class="router-content">
+              <router-view></router-view>
+              dddd
+          </div>
         </div>
       </div>
     </div>
@@ -55,5 +58,9 @@
     left: 0; right: 0;
     top: 0; bottom: 0;
     overflow: auto;
+  }
+
+  .router-content{
+    padding: 15px;
   }
 </style>
