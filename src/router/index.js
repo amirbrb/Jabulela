@@ -8,6 +8,22 @@ export default new Router({
     {
       path: '/',
       name: 'home'
+    },
+    {
+      path: '/list',
+      name: 'list'
+    },
+    {
+      path: '/geo',
+      name: 'geo'
+    },
+    {
+      path: '/settings',
+      name: 'settings'
+    },
+    {
+      path: '/me',
+      name: 'profile'
     }
   ]
 })

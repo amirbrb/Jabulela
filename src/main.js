@@ -6,10 +6,12 @@ import App from './components/general/App'
 import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faListUl, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faBars)
+library.add(faCog)
+library.add(faListUl)
+library.add(faGlobe)
 
 Vue.use(VueResource)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

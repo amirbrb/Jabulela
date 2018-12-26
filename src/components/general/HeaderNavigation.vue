@@ -1,38 +1,67 @@
 <template>
   <div class="navigation-bar">
-    <div class="header">
-      <font-awesome-icon icon="bars" class="button-small left clickable" @click="toggleMenu"/>
-      <div class="logo left">
-        evento
+    <div class="header div12">
+      <div class="menu-item" ref="menuSettings">
+        <router-link to="/settings">
+          <font-awesome-icon icon="cog" class="button-small clickable"/>
+        </router-link>          
       </div>
-      <div class="user-settings right" @click="toggleUserMenu">
-        <img class="user-profile button-small clickable" :src="getImage(this.$store.state.userData.profileImage)"/>
+      <div class="menu-item" ref="menuList">
+        <router-link to="/list">
+          <font-awesome-icon icon="list-ul" class="button-small clickable"/>
+        </router-link>          
       </div>
+      <div class="menu-item" ref="menuGeo">
+        <router-link to="/geo">
+          <font-awesome-icon icon="globe" class="button-small clickable"/>
+        </router-link>          
+      </div>
+      <router-link to="/">
+        <div class="logo right">
+          evento
+        </div>
+      </router-link>
+      <router-link to="/me">
+        <div class="user-settings right"> 
+          <img class="user-profile button-small clickable" :src="getImage(this.$store.state.userData.profileImage)"/>
+        </div>
+      </router-link>
     </div>
-    <SettingsMenu ref="settings" class="menu"/>
-    <UserMenu ref="userSettings" class="menu"/>
   </div>
 </template>
 
 <script>
   import imageService from '../../services/imageService'
-  import SettingsMenu from './SettingsMenu'
-  import UserMenu from './UserMenu'
   export default {
     mixins: [imageService],
-    components: {SettingsMenu, UserMenu},
+    components: {},
     data: function () {
       return {
       }
     },
+    mounted: function () {
+      this.setSelectedItemByRouteName(this.$route.name)
+    },
+    watch: {
+      $route (to, from) {
+        let menus = document.getElementsByClassName('menu-item')
+        Array.from(menus).forEach(function (item) {
+          item.classList.remove('selected')
+        })
+        this.setSelectedItemByRouteName(this.$route.name)
+      }
+    },
     methods: {
-      toggleMenu: function () {
-        this.$refs.settings.open = !this.$refs.settings.open
-        this.$refs.userSettings.open = false
-      },
-      toggleUserMenu: function () {
-        this.$refs.settings.open = false
-        this.$refs.userSettings.open = !this.$refs.userSettings.open
+      setSelectedItemByRouteName: function (route) {
+        if (route === 'geo') {
+          this.$refs.menuGeo.classList.add('selected')
+        }
+        if (route === 'list') {
+          this.$refs.menuList.classList.add('selected')
+        }
+        if (route === 'settings') {
+          this.$refs.menuSettings.classList.add('selected')
+        }
       }
     }
   }
@@ -40,28 +69,24 @@
 
 <style scoped>
   .navigation-bar{
-    font-size: 24px;
-    height: 35px;
+    background: #F8F8F8;
+    padding-top: 5px;
+    padding-left: 2px;
+    height: 48px;
     z-index: 2;
-    padding: 15px;
-    border-bottom: 2px solid gray;
-  }
-
-  .header{
-
-  }
-
-  .settings-menu{
+    border-bottom: 2px solid #A0A0A0;
   }
 
   .logo{
-    margin-left: 30px;
-    line-height: 38px;
+    margin-left: 15px;
+    font-size: 34px;
+    color: #707070;
+    font-family: sans-serif
   }
 
   .user-profile {
     border-radius: 50px;
-    border: 2px solid gray;
+    border: 2px solid #A0A0A0;
     position: absolute;
     right: 10px;
   }
@@ -73,4 +98,22 @@
     text-align: center;
   }
 
+  .menu-item{
+    font-size: 20px;
+    color: #A0A0A0;
+    width: 40px;
+    float: left;
+    border-left: 1px solid #A0A0A0;
+    text-align: center;
+  }
+
+  .menu-item.selected{
+    background: #A8A8A8;
+    color: white;
+  }
+
+
+  .menu-item:nth-of-type(1){
+    border-left: 0;
+  }
 </style>

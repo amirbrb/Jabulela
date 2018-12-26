@@ -10,7 +10,6 @@
         <div class="scrollable">
           <div class="router-content">
               <router-view></router-view>
-              dddd
           </div>
         </div>
       </div>

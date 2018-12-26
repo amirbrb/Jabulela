@@ -22,3 +22,24 @@
 .clickable{
 	cursor: pointer;
 }
+
+.div3 {
+	width: 33.33333333%;
+}
+
+.div6 {
+	width: 50%;
+}
+
+.div9 {
+	width: 66.66666666%;
+}
+
+.div12{
+	width: 100%;
+}
+
+a{
+	font-style: none;
+	color: inherit;
+}
