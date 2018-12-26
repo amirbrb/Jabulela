@@ -33,6 +33,7 @@
 
 <style>
   @import '../../../static/css/site.css';
+  @import '../../../static/css/transitions.css';
   
   html, body {
     height: 100%;

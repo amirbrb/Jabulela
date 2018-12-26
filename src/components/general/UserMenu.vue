@@ -1,7 +1,9 @@
 <template>
-  <div v-bind:class="{'user-menu': true, visible: this.open, hidden: !this.open}">
-    user menu
-  </div>
+  <transition name="slide3">
+    <div class="user-menu" v-if="open">
+      user menu
+    </div>  
+  </transition>
 </template>
 
 <script>
@@ -18,5 +20,7 @@
 </script>
 
 <style scoped>
-  
+  .user-menu{
+    
+  }
 </style>
