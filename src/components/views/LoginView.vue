@@ -26,7 +26,9 @@
 </template>
 
 <script>
+  import usersSerice from '../../mixins/usersService'
   export default {
+    mixins: [usersSerice],
     components: {},
     methods: {
       togglePassword: function () {
@@ -38,6 +40,13 @@
         }
       },
       login: function () {
+        let self = this
+        this.authenticateUser(this.userName, this.password).then(function (response) {
+          if (response.success) {
+            self.$store.commit('authenticateUser', response.userData)
+            self.$router.push(response.userData.lastView)
+          }
+        })
       }
     },
     data: function () {
@@ -58,7 +67,7 @@
     width: 100px;
     height: 100px;
     border: 1px solid black;
-    color: #A8A8A8;
+    color: #383838;
   }
 
   .user-fa{

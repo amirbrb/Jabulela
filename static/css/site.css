@@ -22,8 +22,6 @@
 
 textarea:focus, input:focus{
     outline: none;
-    background: #A8A8A8;
-    color: white;
 }
 
 .visible {

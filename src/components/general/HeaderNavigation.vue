@@ -41,6 +41,7 @@
     },
     mounted: function () {
       this.setSelectedItemByRouteName(this.$route.name)
+      console.log(this.$store.state.userData)
     },
     watch: {
       $route (to, from) {
