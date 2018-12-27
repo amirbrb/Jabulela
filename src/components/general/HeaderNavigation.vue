@@ -1,27 +1,27 @@
 <template>
   <div class="navigation-bar">
     <div class="header div12">
-      <div class="menu-item" ref="menuSettings">
+      <div class="menu-item" ref="menuSettings" v-show="this.$store.state.userData.authenticated">
         <router-link to="/settings">
           <font-awesome-icon icon="cog" class="button-small clickable"/>
         </router-link>          
       </div>
-      <div class="menu-item" ref="menuList">
+      <div class="menu-item" ref="menuList" v-show="this.$store.state.userData.authenticated">
         <router-link to="/list">
           <font-awesome-icon icon="list-ul" class="button-small clickable"/>
         </router-link>          
       </div>
-      <div class="menu-item" ref="menuGeo">
+      <div class="menu-item" ref="menuGeo" v-show="this.$store.state.userData.authenticated">
         <router-link to="/geo">
           <font-awesome-icon icon="globe" class="button-small clickable"/>
         </router-link>          
       </div>
       <router-link to="/">
         <div class="logo right">
-          JABULELA
+          JABULEL<em style="font-style: italic; font-weight: 100;">A</em>
         </div>
       </router-link>
-      <router-link to="/me">
+      <router-link to="/me" v-show="this.$store.state.userData.authenticated">
         <div class="user-settings right"> 
           <img class="user-profile button-small clickable" :src="getImage(this.$store.state.userData.profileImage)"/>
         </div>
@@ -72,14 +72,14 @@
     background: #F8F8F8;
     padding-top: 10px;
     padding-left: 2px;
-    height: 52px;
+    height: 46px;
     z-index: 2;
     border-bottom: 2px solid #A0A0A0;
   }
 
   .logo{
     margin-left: 15px;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     color: #B22222;
     font-family: 'Indie Flower', cursive;

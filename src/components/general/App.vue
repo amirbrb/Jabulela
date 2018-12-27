@@ -38,6 +38,7 @@
 <style>
   @import '../../../static/css/site.css';
   @import '../../../static/css/transitions.css';
+  @import '../../../static/css/forms.css';
   @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Indie+Flower');
   
   html, body {

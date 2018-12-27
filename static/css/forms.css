@@ -1,0 +1,97 @@
+.form-text-wrapper {
+  margin-top: 15px;
+}
+
+.form-text-wrapper input {
+  cursor: pointer;
+  height: 20px;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.form-text-wrapper .add-on{
+  color: #A8A8A8;
+  margin-left: -35px;
+}
+
+.form-check-wrapper{
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.form-submit-wrapper{
+  margin-top: 15px; 
+  float: right;
+  margin-right: 80px;
+}
+
+.form-submit-wrapper .submit{
+  border: 1px solid black;
+  border-radius: 11px;
+  padding: 5px;
+  color: #A0A0A0;
+  margin-top: 40px;
+}
+
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.1em; height: 1.1em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: .48em; left: .5em;
+  font-size: 0.8em;
+  line-height: 0.9;
+  color: #A8A8A8;
+  transition: all .2s;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #A8A8A8;
+}
+[type="checkbox"]:disabled + label {
+  color: #A8A8A8;
+}

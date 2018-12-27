@@ -1,6 +1,6 @@
 <template>
   <div>
-    sop many words, sop many words, sop many words, sop many words
+    home sweet home
   </div>
 </template>
 

@@ -7,7 +7,9 @@
       console.log('created')
     },
     mounted: function () {
-      console.log('mounted')
+      if (!this.$store.state.userData.authenticated) {
+        this.$router.push('/login')
+      }
     }
   }
 </script>

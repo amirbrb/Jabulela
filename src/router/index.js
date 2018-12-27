@@ -5,6 +5,7 @@ import ListView from '../components/views/ListView'
 import MapView from '../components/views/MapView'
 import SettingsView from '../components/views/SettingsView'
 import ProfileView from '../components/views/ProfileView'
+import LoginView from '../components/views/LoginView'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/me',
       name: 'profile',
       component: ProfileView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
     }
   ]
 })
