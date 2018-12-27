@@ -1,6 +1,6 @@
 .slide3-enter-active, .slide3-leave-active {
-	transition: opacity 3s ease-out;
+	transition: left 0.5s ease-out;
 }
 .slide3-enter, .slide3-leave-to /* .fade-leave-active below version 2.1.8 */ {
-	opacity: 0;
+	left: 150px;
 }

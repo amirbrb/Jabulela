@@ -9,7 +9,7 @@
       <div class="inner">
         <div class="scrollable">
           <div class="router-content">
-              <router-view></router-view>
+            <router-view></router-view>
           </div>
         </div>
       </div>
@@ -19,9 +19,14 @@
 
 <script>
   import HeaderNavigation from './HeaderNavigation.vue'
+  import geoLocationService from '../../mixins/geoLocationService'
   export default {
-    name: 'app',
+    mixins: [geoLocationService],
     components: {HeaderNavigation},
+    mounted: function () {
+      this.locatePosition(function (position) {
+      })
+    },
     methods: {
     },
     data: function () {
@@ -33,6 +38,7 @@
 <style>
   @import '../../../static/css/site.css';
   @import '../../../static/css/transitions.css';
+  @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Indie+Flower');
   
   html, body {
     height: 100%;
@@ -62,5 +68,7 @@
 
   .router-content{
     padding: 15px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    line-height: 30px;
   }
 </style>

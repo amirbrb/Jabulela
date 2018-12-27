@@ -18,7 +18,7 @@
       </div>
       <router-link to="/">
         <div class="logo right">
-          evento
+          JABULELA
         </div>
       </router-link>
       <router-link to="/me">
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import imageService from '../../services/imageService'
+  import imageService from '../../mixins/imageService'
   export default {
     mixins: [imageService],
     components: {},
@@ -70,9 +70,9 @@
 <style scoped>
   .navigation-bar{
     background: #F8F8F8;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-left: 2px;
-    height: 48px;
+    height: 52px;
     z-index: 2;
     border-bottom: 2px solid #A0A0A0;
   }
@@ -80,8 +80,9 @@
   .logo{
     margin-left: 15px;
     font-size: 34px;
-    color: #707070;
-    font-family: sans-serif
+    font-weight: bold;
+    color: #B22222;
+    font-family: 'Indie Flower', cursive;
   }
 
   .user-profile {
@@ -100,7 +101,7 @@
 
   .menu-item{
     font-size: 20px;
-    color: #A0A0A0;
+    color: #383838;
     width: 40px;
     float: left;
     border-left: 1px solid #A0A0A0;
