@@ -4,10 +4,9 @@
 
 .form-text-wrapper input {
   cursor: pointer;
-  height: 20px;
-  line-height: 22px;
+  height: 15px;
   font-size: 16px;
-  padding: 10px;
+  padding: 7px;
   border: 0;
   border-bottom: 1px solid black;
 }
@@ -25,13 +24,12 @@
 .form-submit-wrapper{
   margin-top: 15px; 
   float: right;
-  margin-right: 80px;
 }
 
 .form-submit-wrapper .submit{
-  border: 1px solid black;
-  border-radius: 11px;
-  padding: 5px;
+  border-top: 0.09rem solid black;
+  border-bottom: 0.09rem solid black;
+  padding: 1px;
   color: #A0A0A0;
   margin-top: 40px;
 }

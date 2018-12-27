@@ -65,6 +65,10 @@
     font-size: 55px;
   }
 
+  .submit{
+    margin-right: 5em;
+  }
+
   .recover-password{
     color: blue;
     margin-left: 130px;
