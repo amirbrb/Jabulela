@@ -1,16 +1,25 @@
 <template>
   <div class="container">
     <div class="row">
-      <EventsTop/>
+      <EventDatePicker/>
     </div>
   </div>
 </template>
 
 <script>
-  import EventsTop from '../general/EventsTop'
+  import EventDatePicker from '../general/EventDatePicker'
+  import eventsService from '../../mixins/eventsService'
+  import { mapState } from 'vuex'
   export default {
-    components: {EventsTop},
+    components: {EventDatePicker},
+    mixins: [eventsService],
     methods: {
+    },
+    computed: mapState(['selectedDate']),
+    watch: {
+      selectedDate (newValue, oldValue) {
+        this.getEventsByDateAndGeoLocation(newValue, 0, 0)
+      }
     },
     data: function () {
       return {}

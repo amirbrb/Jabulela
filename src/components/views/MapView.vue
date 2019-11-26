@@ -1,12 +1,13 @@
 <template>
   <div>
-    map
+    <EventDatePicker/>
   </div>
 </template>
-
+  
 <script>
+  import EventDatePicker from '../general/EventDatePicker'
   export default {
-    components: {},
+    components: {EventDatePicker},
     methods: {
     },
     data: function () {

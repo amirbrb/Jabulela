@@ -23,6 +23,9 @@
               <font-awesome-icon icon="globe"/>
             </router-link>
           </div>
+          <div class="menu-item-m">
+            <font-awesome-icon icon="search"/>
+          </div>
         </div>
         <div class="col-4 text-right d-none d-sm-flex">
           <div class="menu-item-d">
@@ -34,6 +37,9 @@
             <router-link to="/geo" class="d-none d-sm-flex ml-5">
               <div>map view</div>
             </router-link>
+          </div>
+          <div class="menu-item-d">
+            <font-awesome-icon class="clickable" icon="search"/>
           </div>
         </div>
       </div>
@@ -83,8 +89,9 @@
     font-size: 20px;
     color: #383838;
     width: 60px;
-    border-left: 1px solid #A0A0A0;
     text-align: center;
+    padding-left: 5px;
+    padding-right: 10px;
   }
 
   .menu-item-m.selected{
@@ -95,5 +102,9 @@
 
   .menu-item-m:nth-of-type(1){
     border-left: 0;
+  }
+
+  .menu-item-d{
+    margin-left: 15px;
   }
 </style>
