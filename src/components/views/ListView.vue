@@ -1,14 +1,15 @@
 <template>
-  <div>
-    list
+  <div class="container">
+    <div class="row">
+      <EventsTop/>
+    </div>
   </div>
 </template>
 
 <script>
-  import Base from '../general/BaseComponent'
+  import EventsTop from '../general/EventsTop'
   export default {
-    extends: Base,
-    components: {},
+    components: {EventsTop},
     methods: {
     },
     data: function () {

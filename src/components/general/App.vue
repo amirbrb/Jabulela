@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper container-fluid">
     <div class="header">
       <div class="inner">
         <HeaderNavigation></HeaderNavigation>

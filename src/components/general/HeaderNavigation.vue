@@ -1,69 +1,61 @@
 <template>
-  <div class="navigation-bar">
-    <div class="header div12">
-      <div class="menu-item" ref="menuSettings" v-show="this.$store.state.userData.authenticated">
-        <router-link to="/settings">
-          <font-awesome-icon icon="cog" class="button-small clickable"/>
-        </router-link>          
-      </div>
-      <div class="menu-item" ref="menuList" v-show="this.$store.state.userData.authenticated">
-        <router-link to="/list">
-          <font-awesome-icon icon="list-ul" class="button-small clickable"/>
-        </router-link>          
-      </div>
-      <div class="menu-item" ref="menuGeo" v-show="this.$store.state.userData.authenticated">
-        <router-link to="/geo">
-          <font-awesome-icon icon="globe" class="button-small clickable"/>
-        </router-link>          
-      </div>
-      <router-link to="/">
-        <div class="logo right">
-          JABULEL<em style="font-style: italic; font-weight: 100;">A</em>
+  <div class="navigation-bar container-fluid">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-2 text-left">
+          <font-awesome-icon icon="bars"/>
         </div>
-      </router-link>
-      <router-link to="/me" v-show="this.$store.state.userData.authenticated">
-        <div class="user-settings right"> 
-          <img class="user-profile button-small clickable" :src="getImage(this.$store.state.userData.profileImage)"/>
+        <div class="col-6 text-center logo">
+          <router-link to="/">
+            <div>
+              JABULEL<em style="font-style: italic; font-weight: 100;">A</em>
+            </div>
+          </router-link>
         </div>
-      </router-link>
+        <div class="col-4 text-right d-flex d-sm-none">
+          <div class="menu-item-m">
+            <router-link to="/list">
+              <font-awesome-icon icon="list-ul"/>
+            </router-link>
+          </div>
+          <div class="menu-item-m">
+            <router-link to="/geo" class="d-sm-none ml-1 mt-2">
+              <font-awesome-icon icon="globe"/>
+            </router-link>
+          </div>
+        </div>
+        <div class="col-4 text-right d-none d-sm-flex">
+          <div class="menu-item-d">
+            <router-link to="/list">
+              <div>list view</div>
+            </router-link>
+          </div>
+          <div class="menu-item-d">
+            <router-link to="/geo" class="d-none d-sm-flex ml-5">
+              <div>map view</div>
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import imageService from '../../mixins/imageService'
   export default {
-    mixins: [imageService],
     components: {},
     data: function () {
       return {
       }
     },
     mounted: function () {
-      this.setSelectedItemByRouteName(this.$route.name)
       console.log(this.$store.state.userData)
     },
     watch: {
       $route (to, from) {
-        let menus = document.getElementsByClassName('menu-item')
-        Array.from(menus).forEach(function (item) {
-          item.classList.remove('selected')
-        })
-        this.setSelectedItemByRouteName(this.$route.name)
       }
     },
     methods: {
-      setSelectedItemByRouteName: function (route) {
-        if (route === 'geo') {
-          this.$refs.menuGeo.classList.add('selected')
-        }
-        if (route === 'list') {
-          this.$refs.menuList.classList.add('selected')
-        }
-        if (route === 'settings') {
-          this.$refs.menuSettings.classList.add('selected')
-        }
-      }
     }
   }
 </script>
@@ -73,49 +65,35 @@
     background: #F8F8F8;
     padding-top: 10px;
     padding-left: 2px;
-    height: 46px;
+    height: 50px;
+    margin-top:5px;
     z-index: 2;
     border-bottom: 2px solid #A0A0A0;
   }
 
   .logo{
-    margin-left: 15px;
+    margin-top: -7px;
     font-size: 32px;
     font-weight: bold;
     color: #B22222;
     font-family: 'Indie Flower', cursive;
   }
 
-  .user-profile {
-    border-radius: 50px;
-    border: 2px solid #A0A0A0;
-    position: absolute;
-    right: 10px;
-  }
-
-  .menu {
-    margin-top: 13px;
-    width: 100%;
-    background: grey;
-    text-align: center;
-  }
-
-  .menu-item{
+  .menu-item-m{
     font-size: 20px;
     color: #383838;
-    width: 40px;
-    float: left;
+    width: 60px;
     border-left: 1px solid #A0A0A0;
     text-align: center;
   }
 
-  .menu-item.selected{
+  .menu-item-m.selected{
     background: #A8A8A8;
     color: white;
   }
 
 
-  .menu-item:nth-of-type(1){
+  .menu-item-m:nth-of-type(1){
     border-left: 0;
   }
 </style>

@@ -5,9 +5,7 @@
 </template>
 
 <script>
-  import Base from '../general/BaseComponent'
   export default {
-    extends: Base,
     components: {},
     methods: {
     },
