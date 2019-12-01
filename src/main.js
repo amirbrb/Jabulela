@@ -6,8 +6,9 @@ import App from './components/general/App'
 import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCog, faListUl, faGlobe, faUserCircle, faEyeSlash, faSignature, faBars, faChevronCircleRight, faChevronCircleLeft, faSearch, faClock, faCoins } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faListUl, faGlobe, faUserCircle, faEyeSlash, faSignature, faBars, faChevronCircleRight, faChevronCircleLeft, faSearch, faClock, faCoins, faHistory } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import moment from 'vue-moment'
 
 library.add(faCog)
 library.add(faListUl)
@@ -21,8 +22,10 @@ library.add(faChevronCircleRight)
 library.add(faSearch)
 library.add(faClock)
 library.add(faCoins)
+library.add(faHistory)
 
 Vue.use(VueResource)
+Vue.use(moment)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

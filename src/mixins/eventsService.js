@@ -1,4 +1,5 @@
 /*eslint-disable*/
+import moment from 'moment'
 const events = [
     {
         id: 1,
@@ -69,7 +70,7 @@ const eventsService = {
 	methods: {
 		getEventsByDateAndGeoLocation: (date, lat, lng) => {
             return new Promise(function(resolve, reject){
-                if(date.getDay() % 2 ==0){
+                if(moment(date).day() % 2 ==0){
                     var results = [events[0], events[1]]
                     resolve(results)
                 }

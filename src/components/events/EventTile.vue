@@ -70,4 +70,5 @@
     height: 70px;
     border-radius: 70px;
   }
+
 </style>

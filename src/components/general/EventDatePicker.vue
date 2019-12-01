@@ -1,7 +1,7 @@
 <template>
   <div class="title col-12 text-center">
     <div class="jumbotron">
-      <h3>Events happening near you at</h3>
+      <h3>Events happening near you on</h3>
       <h5>
         <font-awesome-icon class="clickable mr-3" icon="chevron-circle-left" @click="addDate(-1)"/>
         <em class="clickable" @click="changeCalendarVisibility">{{parseDate(this.selectedDate, "ddd, MMM-DD-YYYY")}}</em>
