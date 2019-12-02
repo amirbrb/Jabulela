@@ -1,7 +1,6 @@
 /*eslint-disable*/
 import Vue from 'vue'
 import Vuex from 'vuex'
-import moment from 'moment'
 
 Vue.use(Vuex)
 
@@ -20,10 +19,12 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		setDateMovment(state, dateChange) {
-			this.state.selectedDate = moment(this.state.selectedDate).add(dateChange, 'days').toDate()
+			var newDate = new Date()
+			newDate.setDate(state.selectedDate.getDate() + dateChange)
+			state.selectedDate = newDate	
 		},
 		setDate(state, selectedDate) {
-			this.state.selectedDate = selectedDate
+			state.selectedDate = selectedDate
 		}
 	}
 })

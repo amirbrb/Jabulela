@@ -13,7 +13,7 @@
         <div class="event-info">
           <font-awesome-icon icon="clock" class="d-sm-none"/>
           <div class="d-sm-flex d-none title" style="float:left">when:</div>
-          <strong>{{eventData.date.day}}-{{eventData.date.month}}-{{eventData.date.year}}</strong>
+          <strong>{{$moment([this.eventData.date.year, this.eventData.date.month -1, this.eventData.date.day]).format("ddd, MMM-DD-YYYY")}} ({{this.eventData.timeStart}}-{{this.eventData.timeEnd}})</strong>
         </div>
         <div class="event-info">
           <font-awesome-icon icon="history" class="d-sm-none"/>
@@ -23,10 +23,12 @@
         <div class="event-info">
           <font-awesome-icon icon="coins" class="d-sm-none"/>
           <div class="d-sm-flex d-none title" style="float:left">cost:</div>
-          <strong>{{eventData.cost === 0 ? 'free!' : eventData.cost}}</strong>
+          <strong>{{eventData.cost === 0 ? 'free' : eventData.cost}}</strong>
         </div>
       </div>
-      <div class="event-description">{{eventData.description}}</div>
+      <div class="details-section">
+        {{eventData.description}}
+      </div>
   </div>
 </template>
 
@@ -44,6 +46,8 @@
     data: () => {
       return {
         eventData: {
+          location: {},
+          date: {}
         }
       }
     },
@@ -98,13 +102,12 @@
   }
 
   .event-cover{
-    height: 150px;
-    width: 70%;
-    border-radius: 15px 0 10px;
+    width: 90%;
+    max-height: 300px;
   }
 
   .event-info-wrapper{
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 15px;
   }
 
@@ -116,9 +119,9 @@
     margin-left: 15px;
   }
 
-  .event-description{
+  .details-section{
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 18px;
   }
 
